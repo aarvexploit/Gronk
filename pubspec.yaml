@@ -12,7 +12,9 @@ dependencies:
 
 
   cupertino_icons: ^1.0.6
-  flutter_svg: ^2.0.10+1
+  flutter_svg: ^2.0.10
+  flutter_bloc:
+  hydrated_bloc:
 
 
 dev_dependencies:
