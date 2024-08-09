@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
-import 'package:gronk/core/configs/assets/app_vectors.dart';
+// import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 
@@ -40,12 +40,12 @@ class ChooseModePage extends StatelessWidget {
             ),
             child: Column(
                 children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: SvgPicture.asset(
-                      AppVectors.darklogo
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topCenter,
+                  //   child: SvgPicture.asset(
+                  //     AppVectors.darklogo
+                  //   ),
+                  // ),
                   const Spacer(),
                   const Text(
                     'Enjoy Your Favoraite Music',
