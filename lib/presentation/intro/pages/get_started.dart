@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
+// import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 import 'package:gronk/presentation/choose_mode/pages/choose_mode.dart';

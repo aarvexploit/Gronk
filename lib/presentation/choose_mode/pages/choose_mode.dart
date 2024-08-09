@@ -1,8 +1,13 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
-// import 'package:gronk/core/configs/assets/app_vectors.dart';
+import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
+// import 'package:gronk/core/configs/assets/app_vectors.dart';
+// import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 
 
@@ -48,7 +53,7 @@ class ChooseModePage extends StatelessWidget {
                   // ),
                   const Spacer(),
                   const Text(
-                    'Enjoy Your Favoraite Music',
+                    'Choose Mode',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -56,16 +61,73 @@ class ChooseModePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 21,),
-                  const Text(
-                    'Listen to your Music anytime anywhere just the music on your fingertips ready toburst your ears with the stunning tunes and your favoraite lyrics.',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.grey,
-                      fontSize: 13
-                    ),
-                    textAlign: TextAlign.center,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              child: Container(
+                                height: 80,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xff30393C).withOpacity(0.5),
+                                  shape: BoxShape.circle
+                                ),
+                                child: SvgPicture.asset(
+                                  AppVectors.sun,
+                                  fit: BoxFit.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15,),
+                          const Text(
+                            'Light Mode',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13,
+                              color: AppColors.grey
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox( width: 40,),
+                      Column(
+                        children: [
+                          ClipOval(
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              child: Container(
+                                height: 80,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xff30393C).withOpacity(0.5),
+                                  shape: BoxShape.circle
+                                ),
+                                child: SvgPicture.asset(
+                                  AppVectors.moon,
+                                  fit: BoxFit.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 15,),
+                          const Text(
+                            'Dark Mode',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13,
+                              color: AppColors.grey
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 20,),
+                  const SizedBox(height: 50,),
                   BasicAppButton(
                     onPressed: (){
                       Navigator.push(
@@ -75,7 +137,7 @@ class ChooseModePage extends StatelessWidget {
                           )
                         );
                     },
-                     title: 'Get Started'
+                     title: 'Continue'
                      )
                 ],
               ),
