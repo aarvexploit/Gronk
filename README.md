@@ -1,6 +1,6 @@
-# gronk
+# Gronk
 
-A new Flutter project.
+A Online Music Player player app Purely bulit on flutter unsing bloc architect and hydrated block with the firebase 
 
 ## Getting Started
 
