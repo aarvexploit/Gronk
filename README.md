@@ -1,16 +1,36 @@
-# gronk
+## Gronk The Music Player App
 
-A new Flutter project.
+Gronk is the Simple Online Music Player App based on Flutter using Bloc Architect through Hydrated bloc powered by the backend of Firebase
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Progress
+- [x] Project Structure🪜
+- [x] Theme of Application🎭
+- [x] Assets and Font Folder
+- [x] Defining Pubspec.ymal✍️
+- [x] Splash Page
+- [x] Get Started Page
+- [x] Change the Logo and Name
+- [x] Checkpoint 1 - Check Compatibility 🎭
+- [x] Choose Mode Pages
+- [ ] Choose Mode Logics
+- [ ] Checkpoint 2 - Check Front End 🔍
+- [ ] Login Or Signup Pages🔐
+- [ ] Login Page
+- [ ] Signup Page
+- [ ] Firebase Setup🔥
+- [ ] Auth Domain Layer
+- [ ] Auth Data Layer
+- [ ] Service Locator
+- [ ] Using Auth Cases
+- [ ] Checkpoint 3- Check Authorization🧑‍💼
+- [ ] Upload Songs to Database
+- [ ] Upload Song Cover to Database
+- [ ] Create Cloud Collection
+- [ ] Checkpoint 4 - Test Database
+- [ ] Home Page
+- [ ] Music Player
+- [ ] Final Checkpoint - Check Everything Possible🤴
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
