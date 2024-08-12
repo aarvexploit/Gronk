@@ -20,7 +20,7 @@ Gronk is the Simple Online Music Player App based on Flutter using Bloc Architec
 - [x] Checkpoint 1 - Check Compatibility 🎭
 - [x] Choose Mode Pages
 - [x] Choose Mode Logics
-- [ ] Checkpoint 2 - Check Front End 🔍
+- [ ] Checkpoint 2 - Check Pages 🔍
 - [ ] Login Or Signup Pages🔐
 - [ ] Login Page
 - [ ] Signup Page
