@@ -10,6 +10,7 @@ import 'package:gronk/core/configs/theme/app_colors.dart';
 // import 'package:gronk/core/configs/assets/app_vectors.dart';
 // import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
+import 'package:gronk/presentation/authentication/pages/signup_or_signin.dart';
 import 'package:gronk/presentation/choose_mode/bloc/theme_cubit.dart';
 
 
@@ -47,12 +48,14 @@ class ChooseModePage extends StatelessWidget {
             ),
             child: Column(
                 children: [
-                  // Align(
-                  //   alignment: Alignment.topCenter,
-                  //   child: SvgPicture.asset(
-                  //     AppVectors.darklogo
-                  //   ),
-                  // ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: SvgPicture.asset(
+                      AppVectors.darklogo,
+                      height: 196,
+                      width: 59,
+                    ),
+                  ),
                   const Spacer(),
                   const Text(
                     'Choose Mode',
@@ -145,7 +148,7 @@ class ChooseModePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext context) => const ChooseModePage()
+                          builder: (BuildContext context) => const SignupOrSignin()
                           )
                         );
                     },
