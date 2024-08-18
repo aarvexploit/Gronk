@@ -2,13 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
-// import 'package:gronk/core/configs/assets/app_vectors.dart';
-// import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 import 'package:gronk/presentation/authentication/pages/signup_or_signin.dart';
 import 'package:gronk/presentation/choose_mode/bloc/theme_cubit.dart';
@@ -48,14 +45,14 @@ class ChooseModePage extends StatelessWidget {
             ),
             child: Column(
                 children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: SvgPicture.asset(
-                      AppVectors.darklogo,
-                      height: 196,
-                      width: 59,
-                    ),
-                  ),
+                  // Align(
+                  //   alignment: Alignment.topCenter,
+                  //   child: SvgPicture.asset(
+                  //     AppVectors.darklogo,
+                  //     height: 196,
+                  //     width: ,
+                  //   ),
+                  // ),
                   const Spacer(),
                   const Text(
                     'Choose Mode',

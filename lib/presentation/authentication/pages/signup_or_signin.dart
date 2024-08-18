@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
+import 'package:gronk/core/configs/theme/app_images.dart';
 
 class SignupOrSignin extends StatelessWidget {
   const SignupOrSignin({super.key});
@@ -22,16 +23,13 @@ class SignupOrSignin extends StatelessWidget {
               AppVectors.bottomPattern
             ),
           ),
-          const Align(
-            alignment: Alignment.center,
-            child: Text(
-                    'TEST TEXT',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 60
-                    ),
-                  ),)
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Image.asset(
+              AppImages.authBG
+            ),
+            )
+
         ],
       ),
     );
