@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gronk/common/helpers/is_dark.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/presentation/intro/pages/get_started.dart';
 
@@ -23,7 +24,7 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: Center(
         child: SvgPicture.asset(
-          AppVectors.darklogo
+          context.isDarkMode ? AppVectors.lightlogo : AppVectors.darklogo
         )
         ),
     );
