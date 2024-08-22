@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:gronk/common/widgets/appbar/app_bar.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
+import 'package:gronk/data/models/auth/create_user_req.dart';
+import 'package:gronk/doamin/usecases/auth/signup.dart';
 import 'package:gronk/presentation/authentication/pages/signin.dart';
+import 'package:gronk/service_locator.dart';
 
 class Signup extends StatelessWidget {
-  const Signup({super.key});
+  Signup({super.key});
+
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +36,22 @@ class Signup extends StatelessWidget {
             _passwordField(context),
             const SizedBox( height: 42,),
             BasicAppButton(
-              onPressed: (){}, 
+              onPressed: () async {
+                var result = await sl<SignupUseCase>().call(
+                  params: CreateUserReq(
+                    fullName: _fullName.text.toString(), 
+                    email: _email.text.toString(), 
+                    password: _password.text.toString()
+                    )
+                );
+                result.fold(
+                  (l){
+                    var snackbar = SnackBar(content: Text(l));
+                    ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                  },
+                  (r){}
+                  );
+              }, 
               title: 'Create Account'
               )
           ],
@@ -49,6 +72,7 @@ class Signup extends StatelessWidget {
 
   Widget _fullNameField(BuildContext context){
     return TextField(
+      controller: _fullName,
       decoration: const InputDecoration(
         hintText: 'Full Name'
       ).applyDefaults(
@@ -60,6 +84,7 @@ class Signup extends StatelessWidget {
 
   Widget _emailField(BuildContext context){
     return TextField(
+      controller: _email,
       decoration: const InputDecoration(
         hintText: 'Email'
       ).applyDefaults(
@@ -71,6 +96,7 @@ class Signup extends StatelessWidget {
 
   Widget _passwordField(BuildContext context){
     return TextField(
+      controller: _password,
       decoration: const InputDecoration(
         hintText: 'Password'
       ).applyDefaults(

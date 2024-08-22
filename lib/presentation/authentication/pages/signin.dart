@@ -48,7 +48,7 @@ class Signin extends StatelessWidget {
   Widget _emailField(BuildContext context){
     return TextField(
       decoration: const InputDecoration(
-        hintText: 'Email or Username'
+        hintText: 'Email'
       ).applyDefaults(
 
         Theme.of(context).inputDecorationTheme
@@ -87,7 +87,7 @@ class Signin extends StatelessWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (BuildContext context) => const Signup()
+                builder: (BuildContext context) => Signup()
                 )
               );
           },
