@@ -11,6 +11,8 @@
 migrate_working_dir/
 .vscode
 .obsidian
+firebase.json
+firebase_options.dart
 
 # IntelliJ related
 *.iml

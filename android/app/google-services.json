@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1058538760131",
+    "project_id": "gron8839",
+    "storage_bucket": "gron8839.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058538760131:android:87c07c439b171129fa3f76",
+        "android_client_info": {
+          "package_name": "com.example.gronk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn4a78Psu75cPGO2s5OQUnhOC_UXsdIfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

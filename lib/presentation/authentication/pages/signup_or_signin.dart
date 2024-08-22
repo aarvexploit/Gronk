@@ -6,6 +6,8 @@ import 'package:gronk/common/widgets/button/basic_app_button.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
+import 'package:gronk/presentation/authentication/pages/signin.dart';
+import 'package:gronk/presentation/authentication/pages/signup.dart';
 
 
 class SignupOrSignin extends StatelessWidget {
@@ -36,27 +38,27 @@ class SignupOrSignin extends StatelessWidget {
             ),
             ),
           
-          const Align(
+          Align(
             alignment: Alignment.center,
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 40
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Enjoy Listening To Music',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 21,
                   ),
-                  Text(
+                  const Text(
                     'Gronk is a Indian Music Player app that provides the music Service on the go, You can listen to your favoraite music any time anywhere',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
@@ -65,7 +67,7 @@ class SignupOrSignin extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(
@@ -73,12 +75,26 @@ class SignupOrSignin extends StatelessWidget {
                       Expanded(
                         child: BasicAppButton(
                           title : 'Register',
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => const Signup()
+                                )
+                              );
+                          },
                           ),
                       ),
-                      SizedBox(width: 20,),
+                      const SizedBox(width: 40,),
                       TextButton(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => const Signin()
+                                )
+                              );
+                        },
                         child: Text(
                           'Sign In',
                           style: TextStyle(
