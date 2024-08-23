@@ -4,17 +4,21 @@ Gronk is the Simple Online Music Player App based on Flutter using Bloc Architec
 
 ## Screenshots
 
-<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/Splash.jpeg width=300px>
+<p >
 
-<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/Get_started.jpeg width=300px>
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/Splash.jpeg width=250px >
 
-<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/CHMO.jpeg width=300px>
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/Get_started.jpeg width=250px>
 
-<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/SIn_Sup.jpeg width=300px>
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/CHMO.jpeg width=250px>
 
-<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/SUp.jpeg width=300px>
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/SIn_Sup.jpeg width=250px>
 
-<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/SIn.jpeg width=300px>
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/SUp.jpeg width=250px>
+
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/SIn.jpeg width=250px>
+
+</p>
 
 ## Progress
 - [x] Project Structure🪜
