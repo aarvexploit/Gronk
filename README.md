@@ -30,7 +30,7 @@ Gronk is the Simple Online Music Player App based on Flutter using Bloc Architec
 - [x] Service Locator
 - [x] Using Auth Cases
 - [x] Checkpoint 3- Check Authorization🧑‍💼
-- [ ] Upload Songs to Database
+- [ ] Upload Songs to DataStorage
 - [ ] Upload Song Cover to Database
 - [ ] Create Cloud Collection
 - [ ] Checkpoint 4 - Test Database
