@@ -4,6 +4,7 @@ import 'package:gronk/common/widgets/button/basic_app_button.dart';
 import 'package:gronk/data/models/auth/create_user_req.dart';
 import 'package:gronk/doamin/usecases/auth/signup.dart';
 import 'package:gronk/presentation/authentication/pages/signin.dart';
+import 'package:gronk/presentation/root/pages/root.dart';
 import 'package:gronk/service_locator.dart';
 
 class Signup extends StatelessWidget {
@@ -19,45 +20,49 @@ class Signup extends StatelessWidget {
     return  Scaffold(
       bottomNavigationBar: _signintext(context),
       appBar: const BasicAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
+      body: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(
           vertical: 50,
-          horizontal: 50
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _registertext(),
-            const SizedBox( height: 50,),
-            _fullNameField(context),
-            const SizedBox( height: 50,),
-            _emailField(context),
-            const SizedBox( height: 50,),
-            _passwordField(context),
-            const SizedBox( height: 42,),
-            BasicAppButton(
-              onPressed: () async {
-                var result = await sl<SignupUseCase>().call(
-                  params: CreateUserReq(
-                    fullName: _fullName.text.toString(), 
-                    email: _email.text.toString(), 
-                    password: _password.text.toString()
-                    )
-                );
-                result.fold(
-                  (l){
-                    var snackbar = SnackBar(content: Text(l));
-                    ScaffoldMessenger.of(context).showSnackBar(snackbar);
-                  },
-                  (r){}
+          horizontal: 50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _registertext(),
+              const SizedBox( height: 50,),
+              _fullNameField(context),
+              const SizedBox( height: 50,),
+              _emailField(context),
+              const SizedBox( height: 50,),
+              _passwordField(context),
+              const SizedBox( height: 35,),
+              BasicAppButton(
+                onPressed: () async {
+                  var result = await sl<SignupUseCase>().call(
+                    params: CreateUserReq(
+                      fullName: _fullName.text.toString(), 
+                      email: _email.text.toString(), 
+                      password: _password.text.toString()
+                      )
                   );
-              }, 
-              title: 'Create Account'
-              )
-          ],
+                  result.fold(
+                    (l){
+                      var snackbar = SnackBar(content: Text(l));
+                      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                    },
+                    (r){
+                      Navigator.pushAndRemoveUntil(
+                        context, 
+                        MaterialPageRoute(builder: (BuildContext context) => const RootPage()), 
+                        (route) => false);
+                    }
+                    );
+                }, 
+                title: 'Create Account'
+                )
+            ],
+          ),
         ),
-      ),
-    );
+      );
   }
 
   Widget _registertext(){
@@ -96,6 +101,9 @@ class Signup extends StatelessWidget {
 
   Widget _passwordField(BuildContext context){
     return TextField(
+      obscureText: true,
+      enableSuggestions: false,
+      autocorrect: false,
       controller: _password,
       decoration: const InputDecoration(
         hintText: 'Password'
@@ -126,7 +134,7 @@ class Signup extends StatelessWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (BuildContext context) => const Signin()
+                builder: (BuildContext context) => Signin()
                 )
               );
           },
