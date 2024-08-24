@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:gronk/common/helpers/is_dark.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const BasicAppBar({super.key});
+
+  final bool hideBack;
+
+  const BasicAppBar({
+    this.hideBack = false,
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      leading: IconButton(
+      leading: hideBack ? null : IconButton(
         onPressed: (){
           Navigator.pop(context);
         },

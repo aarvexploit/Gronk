@@ -4,7 +4,7 @@ import 'package:gronk/common/widgets/button/basic_app_button.dart';
 import 'package:gronk/data/models/auth/signin_user_req.dart';
 import 'package:gronk/doamin/usecases/auth/signin.dart';
 import 'package:gronk/presentation/authentication/pages/signup.dart';
-import 'package:gronk/presentation/root/pages/root.dart';
+import 'package:gronk/presentation/home/pages/home.dart';
 
 import '../../../service_locator.dart';
 
@@ -48,7 +48,7 @@ class Signin extends StatelessWidget {
                     (r){
                       Navigator.pushAndRemoveUntil(
                         context, 
-                        MaterialPageRoute(builder: (BuildContext context) => const RootPage()), 
+                        MaterialPageRoute(builder: (BuildContext context) => const HomePage()), 
                         (route) => false);
                     }
                     );
