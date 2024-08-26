@@ -5,6 +5,7 @@ import 'package:gronk/doamin/entities/songs/song.dart';
 
 abstract class SongFirebaseService {
   Future < Either > getNewsSongs();
+  Future < Either > getPlaylist();
 }
 
 
@@ -29,6 +30,25 @@ class SongFirebaseServiceImpl extends SongFirebaseService {
     }
 
   }
+  
+  @override
+  Future<Either> getPlaylist() async{
+    try {
+      List < SongEntity > songs = [];
+      var data = await FirebaseFirestore.instance.collection('Songs').orderBy('release', descending: false).get();
+
+      for (var element in data.docs) {
+        var songModel = SongModel.fromJson(element.data());
+        songs.add(
+          songModel.toEntity()
+        );
+      }
+
+      return Right(songs);
+    } catch (e) {
+      return const Left('An Error occurred, Please Try Again');
+    }
+}
 
 
 }

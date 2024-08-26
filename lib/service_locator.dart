@@ -8,6 +8,7 @@ import 'package:gronk/doamin/repositories/song/song.dart';
 import 'package:gronk/doamin/usecases/auth/signin.dart';
 import 'package:gronk/doamin/usecases/auth/signup.dart';
 import 'package:gronk/doamin/usecases/song/get_news_song.dart';
+import 'package:gronk/doamin/usecases/song/get_playlist.dart';
 
 final sl = GetIt.instance;
 
@@ -41,6 +42,10 @@ Future<void> initializeDependencies() async{
 
   sl.registerSingleton<GetNewsSongUseCase>(
     GetNewsSongUseCase()
+  );
+
+  sl.registerSingleton<GetPlaylistUseCase>(
+    GetPlaylistUseCase()
   );
 
 }

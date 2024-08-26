@@ -4,10 +4,10 @@ import 'package:gronk/doamin/repositories/song/song.dart';
 
 import '../../../service_locator.dart';
 
-class GetNewsSongUseCase implements UseCase<Either,dynamic> {
+class GetPlaylistUseCase implements UseCase<Either,dynamic> {
   @override
   Future<Either> call({params}) async {
-    return await sl<SongRepository>().getNewsSongs();
+    return await sl<SongRepository>().getPlaylist();
   }
 
 }

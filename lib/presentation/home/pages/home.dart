@@ -6,6 +6,7 @@ import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 import 'package:gronk/presentation/home/widgets/news_songs.dart';
+import 'package:gronk/presentation/home/widgets/playlist.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,7 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
-  late final TabController _tabController = TabController(length: 5, vsync: this);
+  late final TabController _tabController = TabController(length: 4, vsync: this);
 
   // void initstate(){
   //   super.initState();
@@ -44,10 +45,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   Container(),
                   Container(),
                   Container(),
-                  Container(),
                 ],
                 ),
-            )
+            ),
+            const SizedBox(height: 40,),
+            const Playlist()
           ],
         ),
       ),
