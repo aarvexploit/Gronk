@@ -70,38 +70,43 @@ class SongPlayerPage extends StatelessWidget {
   }
 
   Widget _songDetail() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              songEntity.title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 22
-              ),
-            ),
-            const SizedBox(height: 5, ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
               Text(
-                songEntity.artist,
+                songEntity.title,
                 style: const TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22
                 ),
               ),
-          ],
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.favorite_outline_outlined,
-            size: 35,
-            color: AppColors.darkGrey,
+              const SizedBox(height: 5, ),
+                Text(
+                  songEntity.artist,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14
+                  ),
+                ),
+            ],
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.favorite_outline_outlined,
+              size: 35,
+              color: AppColors.darkGrey,
+            )
           )
-        )
-      ],
+        ],
+      ),
     );
   }
 
@@ -145,13 +150,15 @@ class SongPlayerPage extends StatelessWidget {
                   },
                   child: Container(
                     height: 70,
-                    width: 40,
+                    width: 70,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: AppColors.primary,
                     ),
                     child: Icon(
-                      context.read<SongPlayerCubit>().audioPlayer.playing ? Icons.pause : Icons.play_arrow_rounded
+                      context.read<SongPlayerCubit>().audioPlayer.playing ? Icons.pause : Icons.play_arrow_rounded,
+                      color: Colors.black,
+                      size: 40,
                     ),
                   ),
                 )
