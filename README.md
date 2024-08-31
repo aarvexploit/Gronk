@@ -18,6 +18,12 @@ Gronk is the Simple Online Music Player App based on Flutter using Bloc Architec
 
 <img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/SIn.jpeg width=250px>
 
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/Home.jpeg width=250px>
+
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/Player.jpeg width=250px>
+
+<img src=https://github.com/aarvexploit/Gronk-The-Music-Player/blob/development/SS/Profile.jpeg width=250px>
+
 </p>
 
 ## Progress
@@ -48,6 +54,6 @@ Gronk is the Simple Online Music Player App based on Flutter using Bloc Architec
 - [x] Home Page
 - [x] Music Player
 - [x] Liked Song Logic
-- [ ] Profile Page
-- [ ] Final Checkpoint - Check Everything Possible🤴
+- [x] Profile Page
+- [x] Final Checkpoint - Check Everything Possible🤴
 
