@@ -4,4 +4,7 @@ class AppUrls{
   static const songfirestorage = 'https://firebasestorage.googleapis.com/v0/b/gron8839.appspot.com/o/Songs%2F';
   
   static const media = 'alt=media';
+
+  static const defaultImage = 'https://cdn-icons-png.flaticon.com/512/10542/10542486.png';
+
 }

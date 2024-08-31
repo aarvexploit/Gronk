@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gronk/common/widgets/appbar/app_bar.dart';
+import 'package:gronk/common/widgets/favorite_button/favorite_button.dart';
 import 'package:gronk/core/configs/constants/app_urls.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/doamin/entities/songs/song.dart';
 import 'package:gronk/presentation/song_player/bloc/song_player_cubit.dart';
 import 'package:gronk/presentation/song_player/bloc/song_player_state.dart';
+import 'package:just_audio/just_audio.dart';
 
 class SongPlayerPage extends StatelessWidget {
   final SongEntity songEntity;
@@ -97,13 +99,8 @@ class SongPlayerPage extends StatelessWidget {
                 ),
             ],
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.favorite_outline_outlined,
-              size: 35,
-              color: AppColors.darkGrey,
-            )
+          FavoriteButton(
+            songEntity: songEntity,
           )
         ],
       ),
@@ -124,7 +121,9 @@ class SongPlayerPage extends StatelessWidget {
                 min: 0.0,
                 max: context.read<SongPlayerCubit>().songDuration.inSeconds.toDouble(), 
                 thumbColor: const Color.fromARGB(255, 255, 255, 255),
-                onChanged: (value){}
+                onChanged: (value){
+                  AudioPlayer().seek(value as Duration?);
+                }
                 ),
                 const SizedBox(height: 20,),
                 Row(

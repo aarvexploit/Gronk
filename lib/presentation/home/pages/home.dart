@@ -7,6 +7,7 @@ import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 import 'package:gronk/presentation/home/widgets/news_songs.dart';
 import 'package:gronk/presentation/home/widgets/playlist.dart';
+import 'package:gronk/presentation/profile/pages/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,8 +28,19 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(
+      appBar: BasicAppBar(
         hideBack: true,
+        action: IconButton(
+          onPressed: (){
+            Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (BuildContext context) => const Profile())
+              );
+          }, 
+          icon: const Icon(
+            Icons.person
+          )
+          ),
       ),
       body: SingleChildScrollView(
         child: Column(

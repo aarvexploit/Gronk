@@ -5,9 +5,11 @@ import 'package:gronk/data/sources/auth/auth_firebase_services.dart';
 import 'package:gronk/data/sources/songs/song_firebase_service.dart';
 import 'package:gronk/doamin/repositories/auth/auth.dart';
 import 'package:gronk/doamin/repositories/song/song.dart';
+import 'package:gronk/doamin/usecases/auth/get_user.dart';
 import 'package:gronk/doamin/usecases/auth/signin.dart';
 import 'package:gronk/doamin/usecases/auth/signup.dart';
 import 'package:gronk/doamin/usecases/song/add_or_remove_favorite.dart';
+import 'package:gronk/doamin/usecases/song/get_favorite_songs.dart';
 import 'package:gronk/doamin/usecases/song/get_news_song.dart';
 import 'package:gronk/doamin/usecases/song/get_playlist.dart';
 import 'package:gronk/doamin/usecases/song/is_favorite.dart';
@@ -57,5 +59,14 @@ Future<void> initializeDependencies() async{
   sl.registerSingleton<IsFavoriteSongUseCase>(
     IsFavoriteSongUseCase()
   );
+
+  sl.registerSingleton<GetUserUserCase>(
+    GetUserUserCase()
+  );
+
+  sl.registerSingleton<GetFavoriteSongsUseCase>(
+    GetFavoriteSongsUseCase()
+  );
+
 
 }

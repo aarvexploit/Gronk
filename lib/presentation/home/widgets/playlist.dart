@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gronk/common/helpers/is_dark.dart';
+import 'package:gronk/common/widgets/favorite_button/favorite_button.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/doamin/entities/songs/song.dart';
 import 'package:gronk/presentation/home/bloc/playlist_cubit.dart';
@@ -120,14 +121,10 @@ class Playlist extends StatelessWidget {
                     songs[index].duration.toString().replaceAll('.', ':')
                   ),
                   const SizedBox(width: 29,),
-                  IconButton(
-                    onPressed: (){}, 
-                    icon: const Icon(
-                      Icons. favorite_outline_outlined,
-                      size: 25,
-                      color: AppColors.darkGrey,
+                  FavoriteButton(
+                    songEntity: songs[index],
                     )
-                    )
+
                 ],
               )
             ],
