@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gronk/common/helpers/is_dark.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
+import 'package:gronk/presentation/home/pages/home.dart';
 import 'package:gronk/presentation/intro/pages/get_started.dart';
 
 class SplashPage extends StatefulWidget {
@@ -13,8 +15,23 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
 
+
+  var auth = FirebaseAuth.instance;
+  var isLogin = false;
+
+  checkiflogin() async {
+    auth.authStateChanges().listen((User? user) {
+      if(user != null && mounted){
+        setState(() {
+          isLogin = true;
+        });
+      }
+    });
+  }
+
   @override
   void initState(){
+    checkiflogin();
     super.initState();
     redirect();
   }
@@ -48,7 +65,7 @@ class _SplashPageState extends State<SplashPage> {
       // ignore: use_build_context_synchronously
       context,
       MaterialPageRoute(
-      builder: (BuildContext context) => const GetStartedPage()
+      builder: (BuildContext context) => isLogin ? const HomePage() : const GetStartedPage()
       )
     );
   }

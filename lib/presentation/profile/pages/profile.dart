@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gronk/common/helpers/is_dark.dart';
@@ -9,18 +10,34 @@ import 'package:gronk/presentation/profile/bloc/favorite_songs_state.dart';
 import 'package:gronk/presentation/profile/bloc/profile_info_cubit.dart';
 import 'package:gronk/presentation/profile/bloc/profile_info_state.dart';
 import 'package:gronk/presentation/song_player/pages/song_player.dart';
+import 'package:gronk/presentation/splash/pages/splash.dart';
 
+// ignore: must_be_immutable
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  Profile({super.key});
+
+  var auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(
-        title: Text(
+      appBar: BasicAppBar(
+        title: const Text(
           'Profile'
         ),
-        backgroundColor: Color(0xff2C2B2B),
+        backgroundColor: const Color(0xff2C2B2B),
+        action: IconButton(
+          onPressed: (){
+            auth.signOut(); 
+            Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (BuildContext context) => const SplashPage())
+              );
+          }, 
+          icon: const Icon(
+            Icons.logout
+          )
+          ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -198,6 +215,8 @@ class Profile extends StatelessWidget {
                     separatorBuilder: (context,index) => const SizedBox(height: 20,), 
                     itemCount: state.favoriteSongs.length
                     );
+
+                    
                 }
         
                 if(state is FavoriteSongsFailure){
