@@ -30,6 +30,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return Scaffold(
       appBar: BasicAppBar(
         hideBack: true,
+        title: Padding(
+            // alignment: Alignment.topCenter,
+          padding: const EdgeInsets.all(0),
+          child: Image.asset(
+            context.isDarkMode ? AppVectors.lightlogo : AppVectors.darklogo,
+            height: 42,
+            width: 193,
+          )
+        ),
         action: IconButton(
           onPressed: (){
             Navigator.push(

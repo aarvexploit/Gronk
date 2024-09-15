@@ -18,7 +18,18 @@ class SignupOrSignin extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const BasicAppBar(),
+          BasicAppBar(
+            title: Padding(
+            // alignment: Alignment.topCenter,
+            padding: const EdgeInsets.all(0),
+            child: Image.asset(
+              context.isDarkMode ? AppVectors.lightlogo : AppVectors.darklogo,
+              height: 42,
+              width: 193,
+            )
+          ),
+          ),
+          
           Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(

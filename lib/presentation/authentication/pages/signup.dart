@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gronk/common/helpers/is_dark.dart';
 import 'package:gronk/common/widgets/appbar/app_bar.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
+import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/data/models/auth/create_user_req.dart';
 import 'package:gronk/doamin/usecases/auth/signup.dart';
 import 'package:gronk/presentation/authentication/pages/signin.dart';
@@ -19,7 +21,17 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       bottomNavigationBar: _signintext(context),
-      appBar: const BasicAppBar(),
+      appBar: BasicAppBar(
+        title: Padding(
+            // alignment: Alignment.topCenter,
+          padding: const EdgeInsets.all(0),
+          child: Image.asset(
+            context.isDarkMode ? AppVectors.lightlogo : AppVectors.darklogo,
+            height: 42,
+            width: 193,
+          )
+        ),
+      ),
       body: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
           vertical: 50,

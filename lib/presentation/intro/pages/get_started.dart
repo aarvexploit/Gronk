@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gronk/common/helpers/is_dark.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
+import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 import 'package:gronk/presentation/choose_mode/pages/choose_mode.dart';
@@ -38,6 +40,14 @@ class GetStartedPage extends StatelessWidget{
             ),
             child: Column(
                 children: [
+                  Align(
+                    alignment: Alignment.topCenter,
+                      child: Image.asset(
+                          context.isDarkMode ? AppVectors.lightlogo : AppVectors.darklogo,
+                          height: 42,
+                          width: 193,
+                      )
+                    ),
                   // Align(
                   //   alignment: Alignment.topCenter,
                   //   child: SvgPicture.asset(
