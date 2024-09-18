@@ -3,6 +3,7 @@ import 'package:gronk/common/helpers/is_dark.dart';
 import 'package:gronk/common/widgets/appbar/app_bar.dart';
 import 'package:gronk/common/widgets/button/basic_app_button.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
+import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/data/models/auth/signin_user_req.dart';
 import 'package:gronk/doamin/usecases/auth/signin.dart';
 import 'package:gronk/presentation/authentication/pages/signup.dart';
@@ -54,7 +55,18 @@ class Signin extends StatelessWidget {
                   );
                   result.fold(
                     (l){
-                      var snackbar = SnackBar(content: Text(l));
+                      var snackbar = SnackBar(content: const Text(
+                        "Sorry Got the Credentials Wrong",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ), 
+                      behavior: SnackBarBehavior.floating, 
+                      backgroundColor: AppColors.darkGrey,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      );
                       ScaffoldMessenger.of(context).showSnackBar(snackbar);
                     },
                     (r){

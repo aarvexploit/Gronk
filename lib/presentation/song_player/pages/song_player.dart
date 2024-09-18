@@ -7,6 +7,7 @@ import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/doamin/entities/songs/song.dart';
 import 'package:gronk/presentation/song_player/bloc/song_player_cubit.dart';
 import 'package:gronk/presentation/song_player/bloc/song_player_state.dart';
+// ignore: unused_import
 import 'package:just_audio/just_audio.dart';
 
 class SongPlayerPage extends StatelessWidget {
@@ -36,7 +37,7 @@ class SongPlayerPage extends StatelessWidget {
       body: BlocProvider(
         create: (_) => SongPlayerCubit()..loadSong(
           '${AppUrls.songfirestorage}${songEntity.title}.mp3?${AppUrls.media}'
-        ),
+        ),        
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
               vertical: 16,
@@ -120,9 +121,10 @@ class SongPlayerPage extends StatelessWidget {
                 value: context.read<SongPlayerCubit>().songPosition.inSeconds.toDouble(),
                 min: 0.0,
                 max: context.read<SongPlayerCubit>().songDuration.inSeconds.toDouble(), 
-                thumbColor: const Color.fromARGB(255, 255, 255, 255),
+                thumbColor: const Color(0xff10df97),
                 onChanged: (value){
-                  AudioPlayer().seek(value as Duration?);
+                  int newpos = value.toInt();
+                  context.read < SongPlayerCubit > ().setPosition(newpos);
                 }
                 ),
                 const SizedBox(height: 20,),
@@ -143,23 +145,67 @@ class SongPlayerPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 50,),
-                GestureDetector(
-                  onTap: (){
-                    context.read<SongPlayerCubit>().playOrPauseSong();
-                  },
-                  child: Container(
-                    height: 70,
-                    width: 70,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.primary,
-                    ),
-                    child: Icon(
-                      context.read<SongPlayerCubit>().audioPlayer.playing ? Icons.pause : Icons.play_arrow_rounded,
-                      color: Colors.black,
-                      size: 40,
-                    ),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                        onTap: () {
+                          context.read < SongPlayerCubit > ().playOrPauseSong();
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColors.primary,
+                            ),
+                            child: const Icon(
+                              Icons.skip_previous,
+                              color: Colors.black,
+                              size: 25,
+                            ),
+                        ),
+                      ),
+                      const SizedBox(width: 25,),
+                      GestureDetector(
+                        onTap: () {
+                          context.read < SongPlayerCubit > ().playOrPauseSong();
+                        },
+                        child: Container(
+                          height: 70,
+                          width: 70,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColors.primary,
+                            ),
+                            child: Icon(
+                              context.read < SongPlayerCubit > ().audioPlayer.playing ? Icons.pause : Icons.play_arrow_rounded,
+                              color: Colors.black,
+                              size: 40,
+                            ),
+                        ),
+                      ),
+                      const SizedBox(width: 25,),
+                      GestureDetector(
+                        onTap: () {
+                          context.read < SongPlayerCubit > ().playOrPauseSong();
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColors.primary,
+                            ),
+                            child: const Icon(
+                              Icons.skip_next,
+                              color: Colors.black,
+                              size: 25,
+                            ),
+                        ),
+                      )
+                
+                  ],
                 )
             ],
           );

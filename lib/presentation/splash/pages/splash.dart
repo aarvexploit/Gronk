@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gronk/common/helpers/is_dark.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/presentation/home/pages/home.dart';

@@ -52,29 +52,29 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _homeTopCard(),
-            _tabsView(),
-            SizedBox(
-              height: 260,
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  const NewsSongs(),
-                  Container(),
-                  Container(),
-                  Container(),
-                ],
-                ),
-            ),
-            const SizedBox(height: 40,),
-            const Playlist()
-          ],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _homeTopCard(),
+              _tabsView(),
+              SizedBox(
+                height: 260,
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    const NewsSongs(),
+                    Container(),
+                    Container(),
+                    Container(),
+                  ],
+                  ),
+              ),
+              const SizedBox(height: 40,),
+              const Playlist()
+            ],
+          ),
         ),
-      ),
-    );
+      );
   }
 
   Widget _homeTopCard(){
