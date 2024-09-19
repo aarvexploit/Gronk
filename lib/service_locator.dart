@@ -10,6 +10,7 @@ import 'package:gronk/doamin/usecases/auth/signin.dart';
 import 'package:gronk/doamin/usecases/auth/signup.dart';
 import 'package:gronk/doamin/usecases/song/add_or_remove_favorite.dart';
 import 'package:gronk/doamin/usecases/song/get_favorite_songs.dart';
+import 'package:gronk/doamin/usecases/song/get_latest.dart';
 import 'package:gronk/doamin/usecases/song/get_news_song.dart';
 import 'package:gronk/doamin/usecases/song/get_playlist.dart';
 import 'package:gronk/doamin/usecases/song/is_favorite.dart';
@@ -68,5 +69,8 @@ Future<void> initializeDependencies() async{
     GetFavoriteSongsUseCase()
   );
 
+  sl.registerSingleton<GetLatestUseCase>(
+    GetLatestUseCase()
+  );
 
 }

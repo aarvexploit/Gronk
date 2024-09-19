@@ -5,6 +5,7 @@ import 'package:gronk/common/widgets/appbar/app_bar.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
 import 'package:gronk/core/configs/theme/app_colors.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
+import 'package:gronk/presentation/home/widgets/latest_song.dart';
 import 'package:gronk/presentation/home/widgets/news_songs.dart';
 import 'package:gronk/presentation/home/widgets/playlist.dart';
 import 'package:gronk/presentation/profile/pages/profile.dart';
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _homeTopCard(),
+              const LatestSong(),
               _tabsView(),
               SizedBox(
                 height: 260,
@@ -81,27 +82,30 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return Center(
       child: SizedBox(
         height: 140,
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: SvgPicture.asset(
-                AppVectors.homeTopCard
-              ),
-            ),
-
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  right: 60,
-                ),
-                child: Image.asset(
-                  AppImages.homrArtist
+        child: GestureDetector(
+          onTap: (){},
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: SvgPicture.asset(
+                  AppVectors.homeTopCard
                 ),
               ),
-            )
-          ],
+          
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    right: 60,
+                  ),
+                  child: Image.asset(
+                    AppImages.homrArtist
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

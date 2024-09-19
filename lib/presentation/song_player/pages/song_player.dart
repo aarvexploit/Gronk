@@ -111,6 +111,7 @@ class SongPlayerPage extends StatelessWidget {
   Widget _songPlayer(BuildContext context){
     return BlocBuilder<SongPlayerCubit,SongPlayerState>(
       builder: (context, state){
+        // final positiondata = <SongPlayerCubit>().data;
         if(state is SongPlayerLoading){
           return const CircularProgressIndicator();
         }
@@ -121,10 +122,11 @@ class SongPlayerPage extends StatelessWidget {
                 value: context.read<SongPlayerCubit>().songPosition.inSeconds.toDouble(),
                 min: 0.0,
                 max: context.read<SongPlayerCubit>().songDuration.inSeconds.toDouble(), 
-                thumbColor: const Color(0xff10df97),
+                activeColor: const Color(0xff10df97),
+                thumbColor: Colors.grey,
                 onChanged: (value){
-                  int newpos = value.toInt();
-                  context.read < SongPlayerCubit > ().setPosition(newpos);
+                  int newposition = value.toInt();
+                  context.read < SongPlayerCubit > ().setPosition(newposition);
                 }
                 ),
                 const SizedBox(height: 20,),
@@ -146,26 +148,29 @@ class SongPlayerPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 50,),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  
                   children: [
-                    GestureDetector(
-                        onTap: () {
-                          context.read < SongPlayerCubit > ().playOrPauseSong();
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppColors.primary,
-                            ),
-                            child: const Icon(
-                              Icons.skip_previous,
-                              color: Colors.black,
-                              size: 25,
-                            ),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: GestureDetector(
+                          onTap: () {
+                            context.read < SongPlayerCubit > ().playOrPauseSong();
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.primary,
+                              ),
+                              child: const Icon(
+                                Icons.skip_previous,
+                                color: Colors.black,
+                                size: 25,
+                              ),
+                          ),
                         ),
-                      ),
+                    ),
                       const SizedBox(width: 25,),
                       GestureDetector(
                         onTap: () {
