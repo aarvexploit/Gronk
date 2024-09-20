@@ -336,6 +336,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.0"
+  image_gradient:
+    dependency: "direct main"
+    description:
+      name: image_gradient
+      sha256: "7c32f5a890c1d6ee631bdaaa8cdfb71166d4d4a57f11492e8953775b0ffbcce2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
+  interactive_slider:
+    dependency: "direct main"
+    description:
+      name: interactive_slider
+      sha256: f1a080609754c95906d51fa987c008f02c28b0ac94ee61130fdcd9fffe1a1712
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
   js:
     dependency: transitive
     description:

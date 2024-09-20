@@ -7,6 +7,7 @@ class SongPlayerCubit extends Cubit<SongPlayerState> {
 
   Duration songDuration = Duration.zero;
   Duration songPosition = Duration.zero;
+  Duration buffersong = Duration.zero;
   
   SongPlayerCubit() : super(SongPlayerLoading()) {
 
@@ -19,6 +20,10 @@ class SongPlayerCubit extends Cubit<SongPlayerState> {
         
     audioPlayer.durationStream.listen((duration) {
       songDuration = duration!;
+    });
+
+    audioPlayer.bufferedPositionStream.listen((buffer) {
+      buffersong = buffer;
     });
   }
 
@@ -58,6 +63,12 @@ class SongPlayerCubit extends Cubit<SongPlayerState> {
   void setPosition(position) async{
     await audioPlayer.seek(Duration(seconds: position));
   }
+
+  // Future<double> buffer() async{
+  //   final buffer =  audioPlayer.bufferedPosition;
+  //   final buff = buffer as double;
+  //   return buff;
+  // }
 
   @override
   Future<void> close() {

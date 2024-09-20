@@ -120,10 +120,12 @@ class SongPlayerPage extends StatelessWidget {
             children: [
               Slider(
                 value: context.read<SongPlayerCubit>().songPosition.inSeconds.toDouble(),
+                secondaryTrackValue: context.read<SongPlayerCubit>().buffersong.inSeconds.toDouble(),
+                secondaryActiveColor: const Color.fromARGB(255, 82, 82, 82),
+                thumbColor: Colors.white.withOpacity(0),
                 min: 0.0,
                 max: context.read<SongPlayerCubit>().songDuration.inSeconds.toDouble(), 
-                activeColor: const Color(0xff10df97),
-                thumbColor: Colors.grey,
+                activeColor: const Color.fromARGB(255, 159, 158, 158),
                 onChanged: (value){
                   int newposition = value.toInt();
                   context.read < SongPlayerCubit > ().setPosition(newposition);

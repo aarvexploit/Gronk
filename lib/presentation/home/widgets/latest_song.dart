@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gronk/core/configs/assets/app_vectors.dart';
+import 'package:gronk/core/configs/constants/app_urls.dart';
 import 'package:gronk/core/configs/theme/app_images.dart';
 import 'package:gronk/doamin/entities/songs/song.dart';
 import 'package:gronk/presentation/home/bloc/latest_song_cubit.dart';
 import 'package:gronk/presentation/home/bloc/latest_song_state.dart';
 import 'package:gronk/presentation/song_player/pages/song_player.dart';
+import 'package:image_gradient/image_gradient.dart';
 
 class LatestSong extends StatelessWidget {
   const LatestSong({super.key});
@@ -71,9 +73,15 @@ class LatestSong extends StatelessWidget {
                           padding: const EdgeInsets.only(
                               right: 60,
                             ),
-                            child: Image.asset(
-                              AppImages.homrArtist
-                            ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: ImageGradient.linear(
+                                image: Image.network('${AppUrls.coverfirestorage}${songs[0].title}.jpg?${AppUrls.media}'),
+                                colors: const [Colors.black, Colors.white],
+                              ),
+                            )
                         ),
                       ),
                       Align(

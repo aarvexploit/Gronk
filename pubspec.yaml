@@ -23,6 +23,9 @@ dependencies:
   cloud_functions:
   cloud_firestore:
   just_audio:
+  image_gradient: ^0.0.2
+  interactive_slider: ^0.3.0
+
 
 
 dev_dependencies:

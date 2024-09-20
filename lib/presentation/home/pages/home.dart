@@ -78,38 +78,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       );
   }
 
-  Widget _homeTopCard(){
-    return Center(
-      child: SizedBox(
-        height: 140,
-        child: GestureDetector(
-          onTap: (){},
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: SvgPicture.asset(
-                  AppVectors.homeTopCard
-                ),
-              ),
-          
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    right: 60,
-                  ),
-                  child: Image.asset(
-                    AppImages.homrArtist
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
   Widget _tabsView(){
     return TabBar(
